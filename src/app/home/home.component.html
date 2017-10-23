@@ -1,0 +1,29 @@
+<span style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776;</span>
+<div style="float:right;">
+    <a href="javascript:void(0)" [routerLink]="['/upload']">Upload Images</a> |
+    <a href="javascript:void(0)" [routerLink]="['/calibrate']">Calibrate</a> |
+    <a href="javascript:void(0)" (click)="logout()">Log Out</a>
+</div>
+<div style="text-align:center" id="main">
+  <div id="mySidenav" class="sidenav">
+    <div>
+        <input class="form-control" type="text" name="searchString" placeholder="Search"/>
+        <button type="button" class="btn btn-primary">Search</button>
+    </div>
+    <ul>
+      <li *ngFor="let obj of imgArr" style="list-style-type: none;">
+        <a href="javascript:void(0)" (click)="selectedImage(obj)">
+            <img src="{{obj.path}}" class="img-thumbnail img-responsive img-fluid" height="75px" width="50px"> : {{obj.index}}
+        </a>
+      </li>
+    </ul>
+    <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+  </div>
+  <div id="bottomPanel">
+    <div *ngFor="let obj of selectedImages" class="bottomImage">
+        <a href="javascript:void(0)">
+            <img src="{{obj.path}}" class="img-thumbnail img-responsive img-fluid"  height="75px" width="50px" style="float:left">
+        </a>
+    </div>
+  </div>
+</div>

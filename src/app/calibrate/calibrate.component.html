@@ -1,0 +1,10 @@
+<div class="container">
+  <span>Previous Saved Size: <strong>{{calibratedSize}}</strong></span>
+  <div id="slider" style="width:250px;align:center;"></div>
+  <div>
+    <img src="assets/credit-card.jpg" style="margin: 10px 0px;" id="credit-card">
+  </div>
+  <span id="calibratedSize"></span>
+  <button type="button" class="btn btn-danger" [routerLink]="['/home']">Go Home</button>
+  <button type="button" class="btn btn-primary" (click)="save()">Save</button>
+</div>
